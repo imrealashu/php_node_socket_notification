@@ -11,7 +11,7 @@ Apache/nGinx and Node
 Now a `notification` table has been created in the database.
 Now just install node dependencies.
 
+```console
     npm install
+    
     npm run dev
-
-Now it should be fine to try out. 

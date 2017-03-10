@@ -1,0 +1,29 @@
+{
+  "name": "php_node_socket_notification",
+  "version": "1.0.0",
+  "description": "A simple application which implements sending realtime notifications to the connected clients.",
+  "main": "nodeServer.js",
+  "scripts": {
+    "dev": "node js/nodeServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imrealashu/php_node_socket_notification.git"
+  },
+  "keywords": [
+    "Socket.io",
+    "Realtime",
+    "notification",
+    "PHP"
+  ],
+  "author": "Ashish Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imrealashu/php_node_socket_notification/issues"
+  },
+  "homepage": "https://github.com/imrealashu/php_node_socket_notification#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socketio": "^1.0.0"
+  }
+}

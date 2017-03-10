@@ -167,7 +167,7 @@ $helper = new HelperClass();
     </div>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/pnotify.custom.min.js"></script>
-    <script src="js/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
     <script src="js/nodeClient.js"></script>
 </body>
 

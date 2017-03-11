@@ -39,6 +39,18 @@ var client = (function(){
 			var newMsgContent = '<li data-id="'+data.serverData.lastInsertId+'" onclick="client.openNotification(this)"><a><span class="image"><img src="images/img.jpg" alt="Profile Image" /></span><span><span>Ashish Singh</span><span class="time">0 seconds ago</span></span><span class="message">'+data.notification+'</span></a></li>';
 
 			$cacheDom.html( newMsgContent + actualContent );
+			PNotify.desktop.permission();
+				(new PNotify({
+					title:  'Ashish Singh',
+					text:  data.notification,
+					desktop: {
+						desktop: true,
+						icon: 'images/img.jpg'
+					}
+				})).get().click(function(e) {
+					if ($('.ui-pnotify-closer, .ui-pnotify-sticker, .ui-pnotify-closer *, .ui-pnotify-sticker *').is(e.target)) return;
+					alert('http://vegfru.com/imrealashu/notification/'+serverData.link);
+				});
 
 		});
 	}
@@ -64,18 +76,18 @@ var client = (function(){
 			success: function(data) {
 				var serverData = JSON.parse(data);
 				socket.emit( 'notification', { notification: notification, serverData:serverData } );
-				PNotify.desktop.permission();
-				(new PNotify({
-					title:  'Ashish Singh',
-					text:  notification,
-					desktop: {
-						desktop: true,
-						icon: 'images/img.jpg'
-					}
-				})).get().click(function(e) {
-					if ($('.ui-pnotify-closer, .ui-pnotify-sticker, .ui-pnotify-closer *, .ui-pnotify-sticker *').is(e.target)) return;
-					alert('http://vegfru.com/imrealashu/notification/'+serverData.link);
-				});
+				// PNotify.desktop.permission();
+				// (new PNotify({
+				// 	title:  'Ashish Singh',
+				// 	text:  notification,
+				// 	desktop: {
+				// 		desktop: true,
+				// 		icon: 'images/img.jpg'
+				// 	}
+				// })).get().click(function(e) {
+				// 	if ($('.ui-pnotify-closer, .ui-pnotify-sticker, .ui-pnotify-closer *, .ui-pnotify-sticker *').is(e.target)) return;
+				// 	alert('http://vegfru.com/imrealashu/notification/'+serverData.link);
+				// });
 			}
 		});
 	}
